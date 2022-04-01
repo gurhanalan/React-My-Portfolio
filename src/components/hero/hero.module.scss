@@ -1,0 +1,150 @@
+$color-primary: rgb(0, 156, 76);
+$color-secondary: rgb(92, 104, 230);
+
+$color-grey-light-1: #faf9f9;
+$color-grey-light-2: #f4f2f2;
+$color-grey-light-3: #f0eeee;
+$color-grey-light-4: #ccc;
+
+$color-grey-dark-1: #333;
+$color-grey-dark-2: #777;
+$color-grey-dark-3: #999;
+
+$font-1: "Roboto", sans-serif;
+$font-2: "Miss Fajardose", cursive;
+
+/* /////////////////////////////////////
+WELCOME SECTION 
+//////////// */
+
+.welcome {
+    height: calc(100vh - 6rem);
+    background-image: linear-gradient(
+            rgba($color-grey-dark-2, 0.3),
+            rgba($color-grey-dark-2, 0.3)
+        ),
+        url(../../assets/images/hero2.jpg);
+    // background-size: cover;
+    // background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    background-size: cover;
+    background-position: 0px 0px;
+    background-repeat: repeat-y;
+
+    animation: animatedBackground 20s linear infinite;
+}
+
+@keyframes animatedBackground {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 0 -500%;
+    }
+}
+
+.text-box {
+    z-index: 5;
+    background-color: rgba($color-primary, 0.6);
+    padding: 5rem 7rem;
+    display: inline-block;
+    font-size: 2.5rem;
+    line-height: 1.6;
+    text-align: center;
+
+    animation: dropdown 2s 0.5s linear;
+    h1 {
+        font-family: $font-2;
+        font-size: 10rem;
+    }
+    p {
+        font-family: $font-1;
+
+        font-weight: 500;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
+}
+
+@keyframes dropdown {
+    0% {
+        transform: scale(0.1) translateY(-400rem);
+        opacity: 0.1;
+    }
+    50% {
+        transform: scale(0.1) translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+    }
+}
+
+$d: 70; // density
+$w: 600; // grid size
+$s: 3s; // speed
+
+// Generate the snow image using radial gradients
+$grad: ();
+@for $i from 0 to $d {
+    $v: random(4) + 2;
+    $a: random(5) * 0.1 + 0.5;
+    $grad: $grad,
+        radial-gradient(
+            $v +
+                px
+                $v +
+                px
+                at
+                (random($w - $v * 2) + $v) +
+                px
+                (random($w - $v * 2) + $v) +
+                px,
+            rgba(0, 156, 76, $a) 50%,
+            rgba(0, 0, 0, 0)
+        ) !global;
+}
+
+// The CSS
+// html {
+//   height: 100%;
+//   background: linear-gradient(#123 30%, #667);
+//   overflow: hidden;
+// }
+.snow,
+.snow:before,
+.snow:after {
+    position: absolute;
+    top: -$w + px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-image: $grad;
+    background-size: $w + px $w + px;
+    animation: snow $s linear infinite;
+    content: "";
+}
+.snow:after {
+    margin-left: -$w/3 + px;
+    opacity: 0.4;
+    animation-duration: $s * 2;
+    animation-direction: reverse;
+    filter: blur(3px);
+}
+.snow:before {
+    animation-duration: $s * 3;
+    animation-direction: reverse;
+    margin-left: -$w/2 + px;
+    opacity: 0.65;
+    filter: blur(1.5px);
+}
+@keyframes snow {
+    to {
+        transform: translateY($w + px);
+    }
+}
