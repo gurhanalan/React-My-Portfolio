@@ -1,0 +1,52 @@
+$color-primary: rgb(0, 156, 76);
+$color-secondary: rgb(92, 104, 230);
+
+$color-grey-light-1: #faf9f9;
+$color-grey-light-2: #f4f2f2;
+$color-grey-light-3: #f0eeee;
+$color-grey-light-4: #ccc;
+
+$color-grey-dark-1: #333;
+$color-grey-dark-2: #777;
+$color-grey-dark-3: #999;
+
+$font-1: "Roboto", sans-serif;
+$font-2: "Miss Fajardose", cursive;
+
+/* /////////////////////////////////////
+NAVBAR 
+//////////// */
+.navbar {
+    font-size: 2rem;
+    line-height: 1;
+    h1 {
+        font-family: $font-2;
+        padding: 2rem 3rem;
+    }
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: $color-primary;
+    color: $color-grey-dark-1;
+
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.nav-links {
+    padding: 0 1rem;
+    display: flex;
+    gap: 1rem;
+}
+.nav-link {
+    text-decoration: none;
+    padding: 1rem 2rem;
+    color: currentColor;
+    transition: all 0.2s;
+
+    &:hover {
+        background-color: lighten($color-primary, $amount: 3);
+    }
+}
