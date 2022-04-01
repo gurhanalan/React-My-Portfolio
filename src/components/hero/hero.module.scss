@@ -18,7 +18,8 @@ WELCOME SECTION
 //////////// */
 
 .welcome {
-    height: calc(100vh - 6rem);
+    // height: calc(100vh - 6rem);
+    height: 100vh;
     background-image: linear-gradient(
             rgba($color-grey-dark-2, 0.3),
             rgba($color-grey-dark-2, 0.3)
@@ -32,7 +33,7 @@ WELCOME SECTION
     overflow: hidden;
     position: relative;
     background-size: cover;
-    background-position: 0px 0px;
+    // background-position: 0px 0px;
     background-repeat: repeat-y;
 
     animation: animatedBackground 20s linear infinite;
@@ -43,7 +44,7 @@ WELCOME SECTION
         background-position: 0 0;
     }
     to {
-        background-position: 0 -500%;
+        background-position: 0 -1500%;
     }
 }
 
