@@ -7,11 +7,21 @@ const ProjectItem = ({ name, site, code, image, skills }) => {
 
     return (
         <div className="project-box">
-            <a href={site} className="project-tile">
+            <a
+                href={site}
+                className="project-tile"
+                target="_blank"
+                rel="noreferrer"
+            >
                 <img src={imageLink} alt={name} />
                 {name}
             </a>
-            <a href={code} className="project-code">
+            <a
+                href={code}
+                className="project-code"
+                target="_blank"
+                rel="noreferrer"
+            >
                 <span className="code">Code</span>
             </a>
             <div className="project-skills">
