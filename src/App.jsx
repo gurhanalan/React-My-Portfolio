@@ -1,17 +1,20 @@
-import "./main.scss";
+import './main.scss';
 
-import Hero from "./components/hero/Hero";
-import Nav from "./components/navbar/Nav";
-import Projects from "./components/projectlist/Projects";
+import Hero from './components/hero/Hero';
+import Nav from './components/navbar/Nav';
+
+import ProjectList from './components/projectlist/ProjectList';
+import Footer from './components/footer/Footer';
 
 const App = () => {
-    return (
-        <div>
-            <Nav />
-            <Hero />
-            <Projects />
-        </div>
-    );
+  return (
+    <div>
+      <Nav />
+      <Hero />
+      <ProjectList />
+      <Footer />
+    </div>
+  );
 };
 
 export default App;
